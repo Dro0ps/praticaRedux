@@ -24,6 +24,46 @@
       "nombre": "Jugo de Fresa",
       "precio": "200",
       "id": 5
+    },
+    {
+      "nombre": "Jugo de Frutas",
+      "precio": 200,
+      "id": 6
+    },
+    {
+      "nombre": "Jugo de Frutas",
+      "precio": 200,
+      "id": 7
+    },
+    {
+      "nombre": "Sal",
+      "precio": 500,
+      "id": 8
+    },
+    {
+      "nombre": "Azucar",
+      "precio": 500,
+      "id": 9
+    },
+    {
+      "nombre": "Harina",
+      "precio": 450,
+      "id": 10
+    },
+    {
+      "nombre": "Yerba Mate",
+      "precio": 2330,
+      "id": 11
+    },
+    {
+      "nombre": "Cereal",
+      "precio": 600,
+      "id": 12
+    },
+    {
+      "nombre": "Jurel en Lata",
+      "precio": 630,
+      "id": 13
     }
   ]
 }
