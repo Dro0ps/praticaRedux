@@ -11,11 +11,6 @@
       "precio": "1"
     },
     {
-      "nombre": "Jugo de Naranja",
-      "precio": "300",
-      "id": 3
-    },
-    {
       "nombre": "Rib Eye 800g",
       "precio": "200",
       "id": 4
@@ -31,11 +26,6 @@
       "id": 6
     },
     {
-      "nombre": "Jugo de Frutas",
-      "precio": 200,
-      "id": 7
-    },
-    {
       "nombre": "Sal",
       "precio": 500,
       "id": 8
@@ -46,19 +36,9 @@
       "id": 9
     },
     {
-      "nombre": "Harina",
-      "precio": 450,
-      "id": 10
-    },
-    {
       "nombre": "Yerba Mate",
       "precio": 2330,
       "id": 11
-    },
-    {
-      "nombre": "Cereal",
-      "precio": 600,
-      "id": 12
     },
     {
       "nombre": "Jurel en Lata",

@@ -4,7 +4,10 @@ import {
     AGREGAR_PRODUCTO_ERROR,
     COMENZAR_DESCARGA_PRODUCTOS,
     DESCARGA_PRODUCTOS_EXITO,
-    DESCARGA_PRODUCTOS_ERROR
+    DESCARGA_PRODUCTOS_ERROR,
+    OBTENER_PRODUCTO_ELIMINAR,
+    PRODUCTO_ELIMINADO_EXITO,
+    PRODUCTO_ELIMINADO_ERROR
 } from '../types';
 
 import clienteAxios from '../config/axios';
@@ -70,7 +73,8 @@ export function obtenerProductosAction(){
             const respuesta = await clienteAxios.get('/productos');
             dispatch( descargarProductosExitosa( respuesta.data ));
         } catch (error) {
-            dispatch( descargarProductosExitosa() );
+            console.log(error);
+            dispatch( descargarProductosError(true) );
         }
     }
 }
@@ -83,6 +87,47 @@ const descargarProductos = () => ({
 const descargarProductosExitosa = productos =>( {
     type: DESCARGA_PRODUCTOS_EXITO,
     payload: productos
+});
+
+// si hubo un error
+const descargarProductosError = estado => ({
+    type: DESCARGA_PRODUCTOS_ERROR,
+    payload: estado
+});
+
+
+// Selecciona y elimina el producto
+export function borrarProductoAction(id){
+    return async (dispatch) => {
+        dispatch(obtenerProductosEliminar(id));
+
+        try {
+            const resultado = await clienteAxios.delete(`/productos/${id}`);
+            dispatch( eliminarProductoExito() );
+            Swal.fire(
+                'Eliminado!',
+                'El producto se ha eliminado con correctamente',
+                'success'
+              )
+        } catch (error) {
+            console.log(error);
+            dispatch( eliminarProductoError() );
+            
+        }
+        
+    }
+}
+
+const obtenerProductosEliminar = id => ({
+    type: OBTENER_PRODUCTO_ELIMINAR,
+    payload: id
 })
 
+const eliminarProductoExito = () => ({
+    type: PRODUCTO_ELIMINADO_EXITO
+})
 
+const eliminarProductoError = () => ({
+    type: PRODUCTO_ELIMINADO_ERROR,
+    payload: true
+})
