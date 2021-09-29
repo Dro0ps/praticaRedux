@@ -20,7 +20,7 @@ export function crearNuevoProductoAction(producto){
 
         try {
             // insertar en la API
-            await clienteAxios.post('/producto', producto);
+            await clienteAxios.post('/productos', producto);
 
             // Si todo sale bien, actualizar el state
             dispatch( agregarProductoExito(producto));
