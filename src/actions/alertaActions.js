@@ -9,7 +9,18 @@ export function mostrarAlerta(alerta) {
         distpach(crearAlerta(alerta))
     }
 }
-crearAlerta = alerta => ({
+const crearAlerta = alerta => ({
     type: MOSTRAR_ALERTA,
     payload: alerta
+})
+
+// Ocultar Alerta
+export function ocultarAlertaAction() {
+    return (dispatch) => {
+        dispatch( ocultarAlerta() )
+    }
+}
+
+const ocultarAlerta = () => ({
+    type: OCULTAR_ALERTA
 })

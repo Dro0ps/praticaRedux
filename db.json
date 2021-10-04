@@ -3,7 +3,7 @@
     {
       "id": 1,
       "nombre": "Jugo de Zanahoria",
-      "precio": "450"
+      "precio": "460"
     },
     {
       "id": 2,
@@ -49,6 +49,11 @@
       "nombre": "Yerba Mate Colon",
       "precio": 2300,
       "id": 14
+    },
+    {
+      "nombre": "Balde con Mopa Giratoria",
+      "precio": 50000,
+      "id": 15
     }
   ]
 }

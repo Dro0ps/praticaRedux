@@ -106,7 +106,7 @@ export function borrarProductoAction(id){
         dispatch(obtenerProductosEliminar(id));
 
         try {
-            const resultado = await clienteAxios.delete(`/productos/${id}`);
+            await clienteAxios.delete(`/productos/${id}`);
             dispatch( eliminarProductoExito() );
             Swal.fire(
                 'Eliminado!',
@@ -156,7 +156,7 @@ export function editarProductoAction(producto) {
             await clienteAxios.put(`/productos/${producto.id}`, producto);
             dispatch( editarProductoExito(producto));
         } catch (error) {
-            console.log(error);
+            dispatch( editarProductoError());
         }
     }
 }
@@ -168,5 +168,9 @@ const editarProducto = () => ({
 const editarProductoExito = producto => ({
     type: PRODUCTO_EDITADO_EXITO,
     payload: producto
+})
+const editarProductoError = producto => ({
+    type: PRODUCTO_EDITADO_ERROR,
+    payload: true
 })
 
